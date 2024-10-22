@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+    <h1>Поръчки</h1>
+    <div class="back-button-container">
+        <button class="btn back-btn" onclick="goBackToHome()">Връщане към началната страница</button>
+    </div>
+
+    <section class="admin-products">
+        <h2>Проверка на услуга</h2>
+
+        <!-- Form to Add/Update Products -->
+        <form id="productForm" enctype="multipart/form-data">
+            <input type="hidden" id="productId" name="productId"> <!-- Hidden field for editing -->
+
+            <label for="productName">Избранна услуга:</label>
+            <input type="text" id="productName" name="productName" required>
+
+            <label for="productPrice">Ценна на избраната услуга:</label>
+            <input type="number" id="productPrice" name="productPrice" step="0.01" required>
+
+            <label for="productImage">Снимка :</label>
+            <input type="file" id="productImage" name="productImage" accept="image/*">
+
+            <button type="submit" class="btn">Запазете промените</button>
+        </form>
+
+        <!-- Section to Display Existing Products -->
+        <h3>Проверка на състоянието:</h3>
+        <div class="admin-products-list">
+            <!-- Products will be dynamically loaded here -->
+        </div>
+    </section>
+
+    <!-- Pagination (Optional) -->
+    <div id="pagination"></div>
+
+    <!-- Link to JavaScript -->
+    <script src="js/admin.js"></script>
+    <script>
+        function goBackToHome(){
+            window.location.href = 'index.html';  // Replace with your desired home page URL
+        }
+    </script>
+      <!-- footer section -->
+  <footer class="footer_section">
+    <div class="container">
+      <p>
+        &copy; <span id="displayYear"></span> All Rights Reserved By
+        <a href="https://html.design/">Design&style</a>
+      </p>
+    </div>
+  </footer>
+  <!-- footer section -->
+</body>
+</html>
